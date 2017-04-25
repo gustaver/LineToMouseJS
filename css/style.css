@@ -1,6 +1,7 @@
 #canvas1{
-  width: 100vw;
-  height: 100vh;
+	background-color: #2F3138,
+	width: 100vw;
+	height: 100vh;
 }
 html,body{
   margin: 0;

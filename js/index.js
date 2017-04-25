@@ -4,9 +4,9 @@ var circles = [],
     
     // SETTINGS 
     opacity = 0.6,                                      // the opacity of the circles 0 to 1
-    colors = ['rgba(34, 49, 63,' + opacity + ')',       // an array of rgb colors for the circles
+    colors = ['rgba(38, 221, 192,' + opacity + ')',       // an array of rgb colors for the circles
               'rgba(189, 195, 199,' + opacity + ')',
-              'rgba(241, 196, 15,' + opacity + ')',
+              'rgba(31, 184, 252,' + opacity + ')',
               'rgba(231, 76, 60,' + opacity + ')',
               'rgba(231, 76, 60,' + opacity + ')'
              ],
