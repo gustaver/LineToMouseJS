@@ -17,6 +17,11 @@ var circles = [],
     maxSpeed = 2,                                    // the maximum speed of the circles
     expandState = true;                                      // the direction of expansion
 
+canvas.addEventListener("mousemove", setMousePosition, false);
+var mouseX = 0;
+var mouseY = 0;
+var canvasPos = getPosition(canvas);
+
 function buildArray() {
     'use strict';
     
@@ -45,6 +50,15 @@ function build(){
         var curCircle = circles[h];
         context.fillStyle = colors[curCircle.color-1];
         context.beginPath();
+
+        // calculate distance between circle and mouse 
+        var a = mouseX - curCircle.left;
+        var b = mouseY - curCircle.top;
+
+        var c = Math.sqrt(a*a + b*b);
+
+        console.log(c);
+
         if(curCircle.left > canvas.width+curCircle.size){
             curCircle.left = 0-curCircle.size;
             context.arc(curCircle.left, curCircle.top, curCircle.size, 0, 2 * Math.PI, false);
@@ -86,8 +100,32 @@ function build(){
         context.fill();
         context.ellipse;
     }
+
+//     context.beginPath();
+//     context.arc(mouseX, mouseY, 50, 0, 2 * Math.PI, true);
+//     context.fillStyle = "transparent";
+//     context.fill();
 }
 
+function setMousePosition(e) {
+  mouseX = e.clientX - canvasPos.x;
+  mouseY = e.clientY - canvasPos.y;
+}
+
+function getPosition(el) {
+  var xPosition = 0;
+  var yPosition = 0;
+ 
+  while (el) {
+    xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+    yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+    el = el.offsetParent;
+  }
+  return {
+    x: xPosition,
+    y: yPosition
+  };
+}       
 
 var xVal = 0;
 
