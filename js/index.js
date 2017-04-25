@@ -7,7 +7,7 @@ var circles = [],
     colors = ['rgba(38, 221, 192,' + opacity + ')',       // an array of rgb colors for the circles
               'rgba(189, 195, 199,' + opacity + ')',
               'rgba(31, 184, 252,' + opacity + ')',
-              'rgba(231, 76, 60,' + opacity + ')',
+              'rgba(253, 137, 253,' + opacity + ')',
               'rgba(231, 76, 60,' + opacity + ')'
              ],
     minSize = 1,                                        // the minimum size of the circles in px
