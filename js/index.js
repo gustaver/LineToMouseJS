@@ -57,7 +57,11 @@ function build(){
 
         var c = Math.sqrt(a*a + b*b);
 
-        console.log(c);
+        if (c < 200) {
+            // Draw line from circle to mouse
+            context.moveTo(curCircle.left, curCircle.top);
+            context.lineTo(mouseX, mouseY);
+        }
 
         if(curCircle.left > canvas.width+curCircle.size){
             curCircle.left = 0-curCircle.size;
